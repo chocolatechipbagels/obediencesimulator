@@ -4,7 +4,7 @@ This script is part of the obedience simulator program
 It was made to test the chance of success of the protagonist Weezing of Pikasprey Yellow's Oct 6, 2023 youtube video,
    Soft Lock Picking: The Worst Bug Catcher Battle, https://www.youtube.com/watch?v=3DF8XOhsFyg
    
- As such, it supports the Generation III obedience calculations, for a level 100 Weezing with Explosion and Self-Destruct
+ As such, it supports the Generation III obedience calculations, for a level 100 Weezing with Explosion 
     vs a level 9 Weedle with Poison Sting (Poison Physical 15 BP 35 PP 100 Acc, non-intrusive secondary effect) and String Shot (40 PP non-intrusive Status)
     
  As of 10/8/2023, this script is only built for this specific instance
