@@ -11,6 +11,7 @@ It was made to test the chance of success of the protagonist Weezing of Pikaspre
 import random
 import math
 from lib.inputs import PKMNInputs
+from lib.analysis import OSAnalysis
 
 class Simulator:
 
@@ -229,8 +230,14 @@ class Simulator:
         averagehp = (sum(remaining_hp) / len(remaining_hp))
 
 
-        print(f'Weezing won {successes} of {maxiter} attempts, with a win rate of {winrate}%')
-        print(f'Weezing had on average {averagehp} / {self.inputs.player_stats["HP"]} hp left at time of detonation')
+        output0 = f'Weezing won {successes} of {maxiter} attempts, with a win rate of {winrate}%'
+        output1 = f'Weezing had on average {averagehp} / {self.inputs.player_stats["HP"]} hp left at time of detonation'
+
+        outputs = [output0, output1, '\n']
+        OSAnalysis().log_outputs(outputs)
+        OSAnalysis().print_outputs(outputs)
+
+
 
 
 
