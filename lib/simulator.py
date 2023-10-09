@@ -68,22 +68,24 @@ class Simulator:
         # therefore, I will hardcode Weezing always going first
         # as another example, I will not bother to code sleep talk or status effects besides sleep
         weezing_status = self.weezing_turn()
-        if weezing_status == 'terminated' or self.weezing_hp <= 0:
+        if weezing_status == 'terminated':
             return 'terminated'
+        elif self.weezing_hp <= 0:
+            # print("Weezing has been overwhelmed by the might of Weedle")
+            return 'overwhelmed'
         else:
             damage = self.weedle_turn()
             if self.weedle_hp <= 0:
                 print('Weezing has succeeded!')
                 return 'success!'
+            elif self.weezing_hp <= 0:
+                # print("Weezing has been overwhelmed by the might of Weedle")
+                return 'overwhelmed'
             return 'continue'
 
     def weezing_turn(self):
         # Weezing turn
         # all effects from weezing's turn are saved herein
-        if self.weezing_hp <= 0:
-            print("Weezing has been overwhelmed by the might of Weedle")
-            return 'overwhelmed'
-
         if self.asleep:
             if not self.sleep_check(self.sleep_counter):
                 self.sleep_counter = self.sleep_counter + 1
